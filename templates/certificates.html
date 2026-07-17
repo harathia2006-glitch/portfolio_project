@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Certificates</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(to right,#f7971e,#ffd200);
+    padding:30px;
+}
+
+
+.container{
+
+    width:75%;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 0px 15px rgba(0,0,0,0.3);
+
+}
+
+
+h1{
+
+    text-align:center;
+    color:#e65100;
+    margin-bottom:25px;
+
+}
+
+
+label{
+
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+
+}
+
+
+input,
+textarea,
+select{
+
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+
+}
+
+
+textarea{
+
+    resize:vertical;
+
+}
+
+
+.buttons{
+
+    margin-top:30px;
+    display:flex;
+    justify-content:space-between;
+
+}
+
+
+button{
+
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    color:white;
+    cursor:pointer;
+
+}
+
+
+.save{
+
+    background:green;
+
+}
+
+
+.reset{
+
+    background:red;
+
+}
+
+
+.home{
+
+    background:#007BFF;
+
+}
+
+
+button:hover{
+
+    opacity:0.9;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>📜 My Certificates</h1>
+
+
+<form action="/save_certificates" method="POST" enctype="multipart/form-data">
+
+
+<label>Certificate Name</label>
+
+<input type="text" 
+name="certificate_name"
+placeholder="Enter Certificate Name"
+required>
+
+
+
+<label>Certificate Type</label>
+
+<select name="certificate_type">
+
+<option>Technical</option>
+
+<option>Academic</option>
+
+<option>Workshop</option>
+
+<option>Internship</option>
+
+<option>Course</option>
+
+<option>Other</option>
+
+</select>
+
+
+
+<label>Issued By (Organization)</label>
+
+<input type="text"
+name="organization"
+placeholder="Certificate Issuing Organization">
+
+
+
+<label>Issue Date</label>
+
+<input type="date"
+name="issue_date">
+
+
+
+<label>Certificate Description</label>
+
+<textarea name="description"
+rows="5"
+placeholder="Write certificate details..."></textarea>
+
+
+
+<label>Upload Certificate</label>
+
+<input type="file"
+name="certificate_file"
+accept=".jpg,.jpeg,.png,.pdf">
+
+
+
+<div class="buttons">
+
+
+<button type="submit" class="save">
+💾 Save
+</button>
+
+
+<button type="reset" class="reset">
+🔄 Reset
+</button>
+
+
+<button type="button" class="home" onclick="goHome()">
+🏠 Home
+</button>
+
+
+</div>
+
+
+</form>
+
+
+</div>
+
+
+
+<script>
+
+function goHome(){
+
+    window.location.href="/";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
